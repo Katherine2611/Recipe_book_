@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SaladsActivity"
+    android:background="@drawable/back">
+
+    <!-- AppBarLayout для заголовка -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.DayNight">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/title_salads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вибір салатів"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- ScrollView для кнопок салатів -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/title_salads"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Салат Цезар -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Салат Цезар"
+                    android:src="@drawable/caesar_salad" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_caesar"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Салат Цезар"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+            <!-- Салат Грецький -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:src="@drawable/greek_salad"
+                    android:contentDescription="Грецький салат"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_greek"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Грецький"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+            <!-- Салат Олів'є -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:src="@drawable/olivie_salad"
+                    android:contentDescription="Салат Олів'є"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_olivier"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Олів'є"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+            <!-- Салат Вінегрет -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:src="@drawable/vinegret_salad"
+                    android:contentDescription="Салат Вінегрет"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_vinegret"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Вінегрет"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

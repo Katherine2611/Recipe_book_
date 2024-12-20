@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".MojitoRecipeActivity">
+
+    <!-- AppBarLayout для заголовка -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.DayNight">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Заголовок рецепту Мохіто -->
+    <TextView
+        android:id="@+id/recipeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мохіто"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Зображення Мохіто -->
+    <ImageView
+        android:id="@+id/recipeImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mojito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle" />
+
+    <!-- ScrollView для вмісту рецепту -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/recipeImage"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Опис -->
+            <TextView
+                android:id="@+id/recipeDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Інгредієнти для мохіто: м'ята, лайм, цукор, рома, газована вода..."
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Інгредієнти -->
+            <TextView
+                android:id="@+id/ingredientsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Інгредієнти:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/ingredientsMojito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- М'ята\n- Лайм\n- Цукор\n- Ром\n- Газована вода"
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Спосіб приготування -->
+            <TextView
+                android:id="@+id/instructionsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Спосіб приготування:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/instructionsMojito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1) Змішайте м'яту, лайм і цукор у склянці;\n2) Додайте ром і газовану воду;\n3) Перемішайте і подавайте з льодом."
+                android:textSize="16sp"
+                android:textColor="#555555" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_to_favorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Додати в обрані"
+                android:backgroundTint="#FBCEB1"
+                android:textColor="@android:color/black"
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

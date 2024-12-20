@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PumpkinSoupRecipeActivity"
+    android:background="@drawable/back">
+
+    <!-- AppBarLayout для заголовка -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.DayNight">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Заголовок рецепту -->
+    <TextView
+        android:id="@+id/title_pumpkin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рецепт гарбузового супу"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Зображення гарбузового супу -->
+
+    <!-- ScrollView для вмісту рецепту -->
+
+    <ImageView
+        android:id="@+id/image_pumpkin"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pumpkin_soup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_pumpkin" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/image_pumpkin"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Опис -->
+            <TextView
+                android:id="@+id/description_pumpkin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ніжний суп із гарбуза для поціновувачів осіннього смаку."
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Інгредієнти -->
+            <TextView
+                android:id="@+id/ingredients_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Інгредієнти:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/ingredients_pumpkin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Гарбуз\n- Вершки\n- Цибуля\n- Часник\n- Олія\n- Сіль, перець"
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Спосіб приготування -->
+            <TextView
+                android:id="@+id/instructions_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Спосіб приготування:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/instructions_pumpkin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1) Очистіть гарбуз від шкірки та насіння, наріжте великими кубиками. Цибулю наріжте дрібно, часник — пластинками;\n
+2) У великій каструлі розігрійте олію. Додайте цибулю, обсмажте до прозорості. Потім додайте часник і смажте ще 1 хвилину;\n
+3) Додайте гарбуз у каструлю, залийте овочевим бульйоном або водою так, щоб гарбуз був повністю покритий. Доведіть до кипіння, зменшіть вогонь і варіть 15–20 хвилин до м'якості гарбуза;\n
+4) Зніміть каструлю з вогню та за допомогою блендера перебийте суп до однорідної консистенції. Якщо суп занадто густий, додайте трохи гарячого бульйону;\n
+5) Поверніть каструлю на слабкий вогонь. Додайте вершки, сіль і перець за смаком. Перемішайте та прогрійте, але не доводьте до кипіння;\n
+6) Подайте гарячий суп, прикрасивши гарбузовим насінням, зеленню або грінками. Смачного!"
+                android:textSize="16sp"
+                android:textColor="#555555" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_to_favorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Додати в обрані"
+                android:backgroundTint="#FBCEB1"
+                android:textColor="@android:color/black"
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

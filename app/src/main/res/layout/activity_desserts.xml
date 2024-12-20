@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DessertsActivity"
+    android:background="@drawable/back">
+
+    <!-- AppBarLayout для заголовка -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.DayNight">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/title_desserts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вибір десертів"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_desserts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title_desserts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp" />
+
+    <!-- ScrollView для рецептів -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/title_desserts"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Торт Наполеон -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Торт Наполеон"
+                    android:src="@drawable/napoleon" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_napoleon"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Торт Наполеон"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+            <!-- Пудинг -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:src="@drawable/pudding"
+                    android:contentDescription="Пудинг"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_pudding"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Пудинг"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+            <!-- Чизкейк -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:src="@drawable/cheesecake"
+                    android:contentDescription="Чизкейк"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_cheesecake"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Чизкейк"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+            <!-- Шоколадний фондан -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="209dp"
+                    android:src="@drawable/fondant"
+                    android:contentDescription="Шоколадний фондан"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_fondant"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Шоколадний фондан"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:backgroundTint="#FBCEB1"
+                    android:textColor="#000000"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

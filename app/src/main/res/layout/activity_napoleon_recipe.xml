@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NapoleonRecipeActivity"
+    android:background="@drawable/back">
+
+    <!-- AppBarLayout для заголовка -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.DayNight">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:title="Рецепт Наполеона"
+            android:titleTextColor="#ffffff" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Рецепт -->
+    <ImageView
+        android:id="@+id/image_napoleon"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Торт Наполеон"
+        android:src="@drawable/napoleon"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/image_napoleon"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Заголовок рецепту -->
+
+            <!-- Інгредієнти -->
+            <TextView
+                android:id="@+id/recipe_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Рецепт Торта Наполеон"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ingredients_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Інгредієнти:"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/ingredients_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• 200 г борошна\n• 100 г масла\n• 1 яйце\n• 100 мл води\n• 150 г крему\n• 100 г цукру\n• 50 г ванільного цукру\n• 1 ч. ложка розпушувача\n• 200 мл молока для крему"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#333333" />
+
+            <!-- Опис рецепту -->
+            <TextView
+                android:id="@+id/recipe_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Замісити тісто з усіх інгредієнтів. Тісто має бути м'яким, не липким. Якщо потрібно, додайте ще борошна.\n\n2. Розкачати тісто на тонкі коржі. Використовувати форму для випікання або вирізати круги.\n\n3. Викласти коржі на деко і випікати при температурі 180°C близько 20 хвилин до золотистого кольору.\n\n4. Для крему змішати молоко, яйце, цукор і ванільний цукор. Варити на малому вогні, постійно помішуючи, поки крем не загусне.\n\n5. Зібрати торт, чергуючи коржі та крем. Залишити торт в холодильнику на кілька годин, щоб він добре пропитався.\n\n6. Прикрасити торт на свій смак. Подавати охолодженим."
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:textColor="#333333" />
+
+            <!-- Поради до рецепту -->
+            <TextView
+                android:id="@+id/tips_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Корисні поради:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tips_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Для більш насиченого смаку можна додати трохи лікеру в крем.\n• Для більшої м'якості крему додайте трохи масла в кінці приготування.\n• Використовуйте форму для випікання однакових коржів для кращої презентації."
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#333333" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_to_favorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Додати в обрані"
+                android:backgroundTint="#FBCEB1"
+                android:textColor="@android:color/black"
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

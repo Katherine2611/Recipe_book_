@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SolyankaRecipeActivity"
+    android:background="@drawable/back">
+
+    <!-- AppBarLayout для заголовка -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.DayNight">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Заголовок рецепту -->
+    <TextView
+        android:id="@+id/title_solyanka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рецепт солянки"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Зображення солянки -->
+    <ImageView
+        android:id="@+id/image_solyanka"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/solyanka"
+        app:layout_constraintTop_toBottomOf="@id/title_solyanka"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- ScrollView для вмісту рецепту -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/image_solyanka"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Опис -->
+            <TextView
+                android:id="@+id/description_solyanka"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Солянка – смачна і насичена перша страва з м'ясом, копченостями та кислими огірками."
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Інгредієнти -->
+            <TextView
+                android:id="@+id/ingredients_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Інгредієнти:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/ingredients_solyanka"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- М'ясо (свинина, яловичина)\n- Копчені ковбаси\n- Кислі огірки\n- Цибуля\n- Морква\n- Томатна паста\n- Лавровий лист\n- Спеції\n- Сіль, перець"
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Спосіб приготування -->
+            <TextView
+                android:id="@+id/instructions_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Спосіб приготування:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/instructions_solyanka"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1) Залийте м'ясо водою, варіть на середньому вогні 1–1,5 години, потім наріжте його кубиками;\n
+2) У сковороді обсмажте нарізану цибулю та моркву, додайте томатну пасту, потушкуйте ще кілька хвилин;\n
+3) Додайте нарізані копчені ковбаси і кислі огірки, варіть ще 10 хвилин;\n
+4) Влийте отриману суміш до бульйону з м'ясом, додайте спеції, варіть ще 15–20 хвилин;\n
+5) Подавайте солянку гарячою з оливками, лимоном та сметаною."
+                android:textSize="16sp"
+                android:textColor="#555555" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_to_favorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Додати в обрані"
+                android:backgroundTint="#FBCEB1"
+                android:textColor="@android:color/black"
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                app:cornerRadius="16dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
